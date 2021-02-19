@@ -57,10 +57,10 @@ const Router = () => {
     return { LayoutRoutes, LayoutPaths }
   }
 
-  const NotAuthorized = lazy(() => import('@src/views/NotAuthorized'))
+  const NotAuthorized = lazy(() => import('@src/views/NotAuthorized.jsx'))
 
   // ** Init Error Component
-  const Error = lazy(() => import('@src/views/Error'))
+  const Error = lazy(() => import('@src/views/Error.jsx'))
 
   /**
    ** Final Route Component Checks for Login & User Role and then redirects to the route
@@ -153,20 +153,20 @@ const Router = () => {
                             /*eslint-disable */
                             {...(route.appLayout
                               ? {
-                                  appLayout: route.appLayout
-                                }
+                                appLayout: route.appLayout
+                              }
                               : {})}
                             {...(route.meta
                               ? {
-                                  routeMeta: route.meta
-                                }
+                                routeMeta: route.meta
+                              }
                               : {})}
                             {...(route.className
                               ? {
-                                  wrapperClass: route.className
-                                }
+                                wrapperClass: route.className
+                              }
                               : {})}
-                            /*eslint-enable */
+                          /*eslint-enable */
                           >
                             <route.component {...props} />
                             {/* <FinalRoute route={route} {...props} /> */}
@@ -188,20 +188,20 @@ const Router = () => {
     <AppRouter basename={process.env.REACT_APP_BASENAME}>
       <Switch>
         {/* If user is logged in Redirect user to DefaultRoute else to login */}
-        {/* <Route
+        <Route
           exact
           path='/'
           render={() => {
             return isUserLoggedIn() ? <Redirect to={DefaultRoute} /> : <Redirect to='/login' />
           }}
-        /> */}
-        <Route
+        />
+        {/* <Route
           exact
           path='/'
           render={() => {
             return <Redirect to={DefaultRoute} />
           }}
-        />
+        /> */}
         {/* Not Auth Route */}
         <Route
           exact

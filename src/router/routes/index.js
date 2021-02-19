@@ -9,7 +9,14 @@ const DefaultRoute = '/home'
 // ** Merge Routes
 const Routes = [
   {
+    path: '/login',
+    exact: true,
+    component: lazy(() => import('../../views/Login')),
+    layout: 'BlankLayout'
+  },
+  {
     path: '/home',
+    exact: true,
     component: lazy(() => import('../../views/Home'))
   },
   {
@@ -17,9 +24,9 @@ const Routes = [
     component: lazy(() => import('../../views/SecondPage'))
   },
   {
-    path: '/login',
-    component: lazy(() => import('../../views/Login')),
-    layout: 'BlankLayout'
+    path: '/gallery/list',
+    exact: true,
+    component: lazy(() => import('../../views/gallery/List'))
   },
   {
     path: '/error',

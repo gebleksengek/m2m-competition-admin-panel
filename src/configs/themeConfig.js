@@ -3,8 +3,8 @@
 //Template config options
 const themeConfig = {
   app: {
-    appName: 'Vuexy',
-    appLogoImage: require('@src/assets/images/logo/logo.svg').default
+    appName: 'Admin Panel',
+    appLogoImage: require('@src/assets/images/logo/logo.png').default
   },
   layout: {
     isRTL: false,
